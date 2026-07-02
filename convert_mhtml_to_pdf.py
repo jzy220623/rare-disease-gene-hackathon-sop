@@ -97,7 +97,7 @@ def clean_wechat_article(html_content):
     margin: 2.5cm;
 }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-family: "Noto Sans CJK SC", "Noto Sans CJK", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     font-size: 12pt;
     line-height: 1.8;
     color: #333;
