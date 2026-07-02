@@ -126,7 +126,6 @@ def html_to_markdown(html_content):
             cleaned_lines.append(line)
     
     result = '\n'.join(cleaned_lines).strip()
-    
     result = re.sub(r'\n{3,}', '\n\n', result)
     
     return result
@@ -141,12 +140,12 @@ def convert_mhtml_to_md(mhtml_path, output_dir=None):
     else:
         md_path = os.path.splitext(mhtml_path)[0] + '.md'
     
-    print(f'正在转换: {filename}')
+    print(f'转换: {filename}')
     
     try:
         html_content = extract_html_from_mhtml(mhtml_path)
         if not html_content:
-            print(f'  警告: 未找到 HTML 内容')
+            print(f'  警告: 未找到 HTML')
             return False
         
         cleaned_html = clean_wechat_article(html_content)
@@ -182,7 +181,7 @@ def main():
         ]
         
         if not mhtml_files:
-            print(f'目录中未找到 mhtml 文件: {input_path}')
+            print(f'未找到 mhtml 文件')
             sys.exit(1)
         
         print(f'找到 {len(mhtml_files)} 个 mhtml 文件\n')
@@ -193,7 +192,7 @@ def main():
                 success_count += 1
             print()
         
-        print(f'转换完成: {success_count}/{len(mhtml_files)} 成功')
+        print(f'完成: {success_count}/{len(mhtml_files)}')
     else:
         print(f'路径不存在: {input_path}')
         sys.exit(1)
